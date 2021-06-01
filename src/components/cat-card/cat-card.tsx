@@ -13,7 +13,7 @@ export const CatCard = ({ description }: CatCardProps) => {
       .then(image => image.blob())
       .then(blob => URL.createObjectURL(blob))
       .then(url => setImageUrl(url))
-  }, [])
+  }, [description])
 
   return (
     <Card>
