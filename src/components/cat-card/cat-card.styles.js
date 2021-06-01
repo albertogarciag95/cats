@@ -21,8 +21,8 @@ export const CardContent = styled.div`
 `;
 
 export const CardImage = styled.div`
-  background-image: url(${props => props.image});
-  background-size: contain;
+  background-image: url(data:image/jpeg;base64,${props => btoa(props.image)});
+  background-size: cover;
   width: 100%;
   height: 100px;
 `;
