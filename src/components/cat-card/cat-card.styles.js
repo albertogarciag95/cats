@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Card = styled.div`
   flex: 0 1 40%;
-  margin: 20px auto;
+  margin: 20px;
   padding: 10px;
   text-align: left;
   border-radius: 5px;
