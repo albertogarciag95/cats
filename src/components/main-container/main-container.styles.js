@@ -6,20 +6,25 @@ export const CatsContainer = styled.div`
   background-image: url(${background});
   text-align: center;
   position: relative;
+  height: 100%;
 `;
 
-export const ShuffleButton = styled.div`
+export const ShuffleButton = styled.button`
   font-size: 2em;
   border-radius: 30px;
   background-color: orange;
   font-family: 'Chango', cursive;
-  margin: 2em;
+  margin: 1em;
+  cursor: pointer;
 `;
 
 export const CatsContentWrapper = styled.div`
   width: 70%;
-  background-color: blue;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 0 auto;
+  height: 80%;
 `;
 
 export const CatsTitle = styled.div`
