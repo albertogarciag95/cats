@@ -1,26 +1,49 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardContent, CardDescription, CardLink } from './cat-card.styles';
+import { 
+  Card, 
+  CardContent, 
+  CardDescription, 
+  CardLink, 
+  CardImage,
+  CardPopup,
+  CardPopupButton,
+  CardImageWrapper, 
+  MAX_DESCRIPTION_LENGTH 
+} from './cat-card.styles';
 
 type CatCardProps = {
   description: string
 };
 
 export const CatCard = ({ description }: CatCardProps) => {
-  const [imageUrl, setImageUrl] = useState('')
+  const [imageUrl, setImageUrl] = useState('');
+  const [isPopupShown, showPopup] = useState(false);
 
   useEffect(() => {
-    fetch('https://cataas.com/cat?width=200', { cache: 'reload' })
-      .then(image => image.blob())
-      .then(blob => URL.createObjectURL(blob))
-      .then(url => setImageUrl(url))
+    fetch('https://cataas.com/cat?width=500', { cache: 'reload' })
+      .then((image: Response) => image.blob())
+      .then((blob: Blob) => URL.createObjectURL(blob))
+      .then((url: string) => setImageUrl(url))
   }, [description])
 
   return (
     <Card>
-        <img alt='cat' src={imageUrl} />
+        <CardImageWrapper>
+          <CardImage alt='cat' src={imageUrl} />
+        </CardImageWrapper>
         <CardContent>
           <CardDescription>{description}</CardDescription>
-          <CardLink>Read more</CardLink>
+          <CardLink 
+            isShown={description.length > MAX_DESCRIPTION_LENGTH}
+            onMouseEnter={() => showPopup(true)}>
+              Read more
+          </CardLink>
+          {isPopupShown && (
+            <CardPopup>
+              <span>{description}</span>
+              <CardPopupButton onClick={() => showPopup(false)}>OK</CardPopupButton>
+            </CardPopup>
+          )}
         </CardContent>
     </Card>
   );

@@ -16,20 +16,24 @@ export const ShuffleButton = styled.button`
   font-family: 'Chango', cursive;
   margin: 1em;
   cursor: pointer;
+  min-width: 200px;
 `;
 
 export const CatsContentWrapper = styled.div`
-  width: 70%;
+  width: 60%;
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 0 auto;
-  height: 80%;
+  height: 90%;
 `;
 
 export const CatsTitle = styled.div`
   font-size: 3em;
   color: #0ea5c8;
   font-family: 'Chango', cursive;
-  padding: .5em 0;
+  padding: .3em 0;
+  @media (max-width: 966px) {
+    font-size: 2em;
+  }
 `;

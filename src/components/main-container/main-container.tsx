@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CatsContainer, ShuffleButton, CatsContentWrapper, CatsTitle } from './main-container.styles';
 import { CatsContent } from '../cats-content/cats-content';
 
