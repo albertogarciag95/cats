@@ -6,6 +6,7 @@ import {
   CardLink, 
   CardImage,
   CardPopup,
+  CardPopupButton,
   CardImageWrapper, 
   MAX_DESCRIPTION_LENGTH 
 } from './cat-card.styles';
@@ -40,7 +41,7 @@ export const CatCard = ({ description }: CatCardProps) => {
           {isPopupShown && (
             <CardPopup>
               <span>{description}</span>
-              <button onClick={() => showPopup(false)}>OK</button>
+              <CardPopupButton onClick={() => showPopup(false)}>OK</CardPopupButton>
             </CardPopup>
           )}
         </CardContent>

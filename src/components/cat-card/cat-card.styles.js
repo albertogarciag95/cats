@@ -68,4 +68,13 @@ export const CardPopup = styled.div`
   position: absolute;
   width: 300px;
   top: 100%;
+`;
+
+export const CardPopupButton = styled.button`
+  display: block;
+  background-color: blue;
+  color: white;
+  border-radius: 30px;
+  width: 80px;
+  margin-top: 20px;
 `
