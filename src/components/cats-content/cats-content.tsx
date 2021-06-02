@@ -14,7 +14,7 @@ export const CatsContent = () => {
   }, []);
 
   const fetchCatsData = () => {
-    fetch('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=4')
+    return fetch('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=4')
       .then(response => response.json())
       .then(responseCatFacts => setCatFacts(responseCatFacts))
   }
@@ -23,7 +23,7 @@ export const CatsContent = () => {
     <CatsContentWrapper>
       <CatCardsContainer>
         {catFacts.map(({ text }) => (
-          <CatCard description={text} />
+          <CatCard description={text} key={text} />
         ))}
       </CatCardsContainer>
       <ShuffleButton onClick={fetchCatsData}>Shuffle</ShuffleButton>

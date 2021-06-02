@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainContainer match snapshot 1`] = `
+<div
+  className="sc-bdnxRM gZRtiH"
+>
+  <div
+    className="sc-gtsrHT dHFJtM"
+  >
+    Random Cat stuff
+  </div>
+  <div
+    className="sc-iqAclL bEtPS"
+  >
+    <div
+      className="sc-jrsJWt fpDAci"
+    />
+    <button
+      className="sc-kEqXSa kWxBhd"
+      onClick={[Function]}
+    >
+      Shuffle
+    </button>
+  </div>
+</div>
+`;

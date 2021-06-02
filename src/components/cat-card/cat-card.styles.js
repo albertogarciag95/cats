@@ -48,3 +48,6 @@ export const CardDescription = styled.span`
     } 
   }}
 `;
+
+CardImage.displayName = 'CardImage';
+CardDescription.displayName = 'CardDescription';

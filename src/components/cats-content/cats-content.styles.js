@@ -26,3 +26,5 @@ export const CatsContentWrapper = styled.div`
   margin: 0 auto;
   height: 90%;
 `;
+
+ShuffleButton.displayName = 'ShuffleButton';

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardLink match snapshot 1`] = `
+<a
+  className="sc-bdnxRM cDyIFN"
+  onMouseEnter={[Function]}
+>
+  Read more
+</a>
+`;
