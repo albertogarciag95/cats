@@ -1,17 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { CatCard } from '../cat-card/cat-card';
-import { CatCardsContainer } from './cats-content.styles';
+import { 
+  CatCardsContainer, 
+  ShuffleButton, 
+  CatsContentWrapper
+} from './cats-content.styles';
 
-type CatsContentProps = {
-  catFacts: Array<any>
-}
+export const CatsContent = () => {
+  const [catFacts, setCatFacts] = useState([]);
+  
+  useEffect(() => {
+    fetchCatsData()
+  }, []);
 
-export const CatsContent = ({ catFacts }: CatsContentProps) => {
+  const fetchCatsData = () => {
+    fetch('https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=4')
+      .then(response => response.json())
+      .then(responseCatFacts => setCatFacts(responseCatFacts))
+  }
+
   return (
-    <CatCardsContainer>
-      {catFacts.map(({ text }) => (
-        <CatCard description={text} />
-      ))}
-    </CatCardsContainer>
+    <CatsContentWrapper>
+      <CatCardsContainer>
+        {catFacts.map(({ text }) => (
+          <CatCard description={text} />
+        ))}
+      </CatCardsContainer>
+      <ShuffleButton onClick={fetchCatsData}>Shuffle</ShuffleButton>
+    </CatsContentWrapper>
   );
 };

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const MAX_DESCRIPTION_LENGTH = 114;
 
-export const Card = styled.div`
+export const CardContainer = styled.div`
   flex-basis: 40%;
   margin: 1em;
   padding: 10px;
@@ -48,33 +48,3 @@ export const CardDescription = styled.span`
     } 
   }}
 `;
-
-export const CardLink = styled.a`
-  margin-top: 10px;
-  color: blue;
-  cursor: pointer;
-  heigth: 30px;
-  ${props => {
-    if(!props.isShown) {
-      return `visibility: hidden`;
-    }
-  }}
-`;
-
-export const CardPopup = styled.div`
-  padding: 20px;
-  background-color: #0ea5c8;
-  opacity: .9;
-  position: absolute;
-  width: 300px;
-  top: 100%;
-`;
-
-export const CardPopupButton = styled.button`
-  display: block;
-  background-color: blue;
-  color: white;
-  border-radius: 30px;
-  width: 80px;
-  margin-top: 20px;
-`
