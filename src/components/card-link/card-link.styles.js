@@ -29,4 +29,8 @@ export const CardPopupButton = styled.button`
   border-radius: 30px;
   width: 80px;
   margin-top: 20px;
-`
+`;
+
+LinkText.displayName = 'LinkText';
+CardPopup.displayName = 'CardPopup';
+CardPopupButton.displayName = 'CardPopupButton';
