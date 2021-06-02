@@ -23,6 +23,7 @@ export const CardContent = styled.div`
   display: inline-flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 `;
 
 export const CardImage = styled.img`
@@ -52,9 +53,19 @@ export const CardLink = styled.a`
   margin-top: 10px;
   color: blue;
   cursor: pointer;
+  heigth: 30px;
   ${props => {
     if(!props.isShown) {
       return `visibility: hidden`;
     }
   }}
 `;
+
+export const CardPopup = styled.div`
+  padding: 20px;
+  background-color: #0ea5c8;
+  opacity: .9;
+  position: absolute;
+  width: 300px;
+  top: 100%;
+`

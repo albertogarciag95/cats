@@ -4,7 +4,8 @@ import {
   CardContent, 
   CardDescription, 
   CardLink, 
-  CardImage, 
+  CardImage,
+  CardPopup,
   CardImageWrapper, 
   MAX_DESCRIPTION_LENGTH 
 } from './cat-card.styles';
@@ -14,7 +15,8 @@ type CatCardProps = {
 };
 
 export const CatCard = ({ description }: CatCardProps) => {
-  const [imageUrl, setImageUrl] = useState('')
+  const [imageUrl, setImageUrl] = useState('');
+  const [isPopupShown, showPopup] = useState(false);
 
   useEffect(() => {
     fetch('https://cataas.com/cat?width=500', { cache: 'reload' })
@@ -31,9 +33,16 @@ export const CatCard = ({ description }: CatCardProps) => {
         <CardContent>
           <CardDescription>{description}</CardDescription>
           <CardLink 
-            isShown={description.length > MAX_DESCRIPTION_LENGTH}>
+            isShown={description.length > MAX_DESCRIPTION_LENGTH}
+            onMouseEnter={() => showPopup(true)}>
               Read more
           </CardLink>
+          {isPopupShown && (
+            <CardPopup>
+              <span>{description}</span>
+              <button onClick={() => showPopup(false)}>OK</button>
+            </CardPopup>
+          )}
         </CardContent>
     </Card>
   );
