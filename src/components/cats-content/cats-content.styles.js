@@ -6,5 +6,4 @@ export const CatCardsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   overflow-y: auto;
-  height: 700px;
 `;

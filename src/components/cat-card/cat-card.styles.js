@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+export const MAX_DESCRIPTION_LENGTH = 114;
+
 export const Card = styled.div`
   flex-basis: 40%;
   margin: 1em;
@@ -24,7 +26,7 @@ export const CardContent = styled.div`
 `;
 
 export const CardImage = styled.img`
-  height: 200px;
+  height: 220px;
   width: 100%;
   object-fit: cover;
 `;
@@ -35,12 +37,24 @@ export const CardImageWrapper = styled.div`
 
 export const CardDescription = styled.span`
   margin-top: 10px;
-  height: 37px;
-  overflow: hidden;
+  ${props => {
+    if(props.children.length > MAX_DESCRIPTION_LENGTH) {
+      return`
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;`
+    } 
+  }}
 `;
 
 export const CardLink = styled.a`
   margin-top: 10px;
   color: blue;
   cursor: pointer;
+  ${props => {
+    if(!props.isShown) {
+      return `visibility: hidden`;
+    }
+  }}
 `;
