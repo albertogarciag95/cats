@@ -18,6 +18,7 @@ install:
   - yarn install
 test:
   - yarn test
+# test
 # deploy:
 #   provider: heroku
 #   api_key:
