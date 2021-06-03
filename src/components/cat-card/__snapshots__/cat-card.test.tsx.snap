@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CatCard match snapshot 1`] = `
+<div
+  className="sc-bdnxRM jOCwi"
+>
+  <div
+    className="sc-hKFxyN gcWuxB"
+  >
+    <img
+      alt="cat"
+      className="sc-dlnjwi ibQVqM"
+      src=""
+    />
+  </div>
+  <div
+    className="sc-gtsrHT jDeUIw"
+  >
+    <span
+      className="sc-eCApnc drERXz"
+    >
+      test
+    </span>
+    <a
+      className="sc-jSFjdj jAkyBl"
+      onMouseEnter={[Function]}
+    >
+      Read more
+    </a>
+  </div>
+</div>
+`;
