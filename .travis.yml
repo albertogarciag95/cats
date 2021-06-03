@@ -14,9 +14,8 @@ notifications:
   email:
     recipients:
       - alberto95.rm@gmail.com
-install:
+script:
   - yarn install
-test:
   - yarn test
 # test
 # deploy:
