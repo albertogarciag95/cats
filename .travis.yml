@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - '12'
+addons:
+  chrome: stable
+branches:
+  - develop
+  - /^feature/.$/
+  - master
+cache:
+  directories:
+     - ./node_modules
+notifications:
+  email:
+    recipients:
+      - alberto95.rm@gmail.com
+install:
+  - yarn install
+test:
+  - yarn test
+# deploy:
+#   provider: heroku
+#   api_key:
+#     secure: $HEROKU
+#   on:
